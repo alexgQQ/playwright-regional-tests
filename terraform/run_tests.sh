@@ -4,8 +4,8 @@
 
 set -ex
 
-ZONE=$(curl http://metadata.google.internal/computeMetadata/v1/instance/attributes/zone -H "Metadata-Flavor: Google")
-BUCKET_PATH=$(curl http://metadata.google.internal/computeMetadata/v1/instance/attributes/bucket_path -H "Metadata-Flavor: Google")
+export ZONE=$(curl http://metadata.google.internal/computeMetadata/v1/instance/attributes/zone -H "Metadata-Flavor: Google")
+export BUCKET_PATH=$(curl http://metadata.google.internal/computeMetadata/v1/instance/attributes/bucket_path -H "Metadata-Flavor: Google")
 
 # Since this runs as a startup script there may be other
 # startup processes that may need to finish up
